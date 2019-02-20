@@ -46,7 +46,7 @@ public class Queue<T> {
     }
 
     private static class Node<T> {
-        private Node next;
+        private Node<T> next;
         private T data;
 
         public Node(T data) {
