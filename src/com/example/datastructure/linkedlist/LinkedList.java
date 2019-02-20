@@ -1,8 +1,8 @@
 package com.example.datastructure.linkedlist;
 
-public class LinkedList {
+public class LinkedList<T> {
 
-    private Node head;
+    private Node<T> head;
 
     public void append(int data) {
         if (head == null) {
@@ -26,7 +26,7 @@ public class LinkedList {
         head = newHead;
     }
 
-    public void delete(int data) {
+    public void delete(T data) {
         if (head == null) return;
         if (head.data == data) {
             head = head.next;
@@ -48,14 +48,13 @@ public class LinkedList {
             current = current.next;
         }
     }
-}
 
-class Node {
+    private static class Node<T> {
+        private Node next;
+        private T data;
 
-    Node next;
-    int data;
-
-    public Node(int data) {
-        this.data = data;
+        public Node(T data) {
+            this.data = data;
+        }
     }
 }
